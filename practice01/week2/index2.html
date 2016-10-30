@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            function game(){
+                var colors = ['red', 'blue', 'yellow'];
+                var user_input;
+                var answer = colors[Math.floor(Math.random()*colors.length)];
+                var game_over = false;
+
+                while(!game_over){
+                    user_input = prompt('input color red, blue or yellow.');
+
+                    if(colors.indexOf(user_input)==-1){
+                        alert('red, blue or yellow only.');
+                    }else if(user_input!=answer){
+                        alert('wrong answer.');
+                    }else if(user_input==answer){
+                        alert('congrats!');
+                        game_over = true;
+                        document.body.style.background = answer;
+                    }else{
+                        alert('huh? what?');
+                    }
+                }
+
+            }
+
+        </script>
+    </head>
+
+    <body onload="game()">
+    </body>
+
+</html>
